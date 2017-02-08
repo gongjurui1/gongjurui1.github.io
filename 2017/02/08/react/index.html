@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>react笔记 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="react,reactDOM,babel编译es6-es5this.props获取属性
+this.props.属性 
+this.props.childrenstate状态 ：只能用内部初始化，由组件内部改变
+this.setState({name:’gong’})调用一次，自动render一次，重新加载界面
+this.state.name 获取状态
+getInitialState获取初始状态
+
+操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react笔记">
+<meta property="og:url" content="http://yoursite.com/2017/02/08/react/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="react,reactDOM,babel编译es6-es5this.props获取属性
+this.props.属性 
+this.props.childrenstate状态 ：只能用内部初始化，由组件内部改变
+this.setState({name:’gong’})调用一次，自动render一次，重新加载界面
+this.state.name 获取状态
+getInitialState获取初始状态
+
+操">
+<meta property="og:updated_time" content="2017-02-03T10:55:40.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react笔记">
+<meta name="twitter:description" content="react,reactDOM,babel编译es6-es5this.props获取属性
+this.props.属性 
+this.props.childrenstate状态 ：只能用内部初始化，由组件内部改变
+this.setState({name:’gong’})调用一次，自动render一次，重新加载界面
+this.state.name 获取状态
+getInitialState获取初始状态
+
+操">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-react" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/08/react/" class="article-date">
+  <time datetime="2017-02-08T03:49:18.493Z" itemprop="datePublished">2017-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
+<li>this.props.属性 </li>
+<li>this.props.children<h2 id="state状态-：只能用内部初始化，由组件内部改变"><a href="#state状态-：只能用内部初始化，由组件内部改变" class="headerlink" title="state状态 ：只能用内部初始化，由组件内部改变"></a>state状态 ：只能用内部初始化，由组件内部改变</h2></li>
+<li>this.setState({name:’gong’})调用一次，自动render一次，重新加载界面</li>
+<li>this.state.name 获取状态</li>
+<li>getInitialState获取初始状态</li>
+</ul>
+<h2 id="操作dom"><a href="#操作dom" class="headerlink" title="操作dom"></a>操作dom</h2><ul>
+<li>this.refs.[name] :refs是一个对象，[name]是key，值是对应的dom元素<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">getDefaultProps()&#123; </div><div class="line">    return &#123;name:&apos;hh&apos;&#125; 1.获取默认属性</div><div class="line">&#125;</div><div class="line">getInitialState()&#123;  </div><div class="line">   return &#123;count:1&#125; 2.获取初始状态 </div><div class="line">&#125;</div><div class="line">componentWillMount()&#123; </div><div class="line">    3.组建将要被加载在dom容器内部</div><div class="line">&#125;</div><div class="line">render()&#123;</div><div class="line">    4.组建挂载到DOM容器内部</div><div class="line">&#125;</div><div class="line">componentDidMount()&#123;</div><div class="line">    5.组件挂载完成</div><div class="line">&#125;</div><div class="line">shouldComponentUpdate(newProps,newState)&#123;&#125;</div><div class="line">    6.组件是否应该被更新</div><div class="line">&#125;</div><div class="line">componentWillUpdate()&#123;</div><div class="line">    7.组件将要被更新</div><div class="line">&#125;</div><div class="line">componentDidUpdate()&#123;</div><div class="line">    8.组件更新完成之后</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="虚拟dom-jsx-js-xml"><a href="#虚拟dom-jsx-js-xml" class="headerlink" title="虚拟dom jsx js+xml"></a>虚拟dom jsx js+xml</h2><ul>
+<li>虚拟dom转成js数据结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(&lt;h1 style=&#123;&#123;color:red;font-size:23px;&#125;&#125;&gt;hahahha&lt;/h1&gt;,document.querySelector(&apos;#app&apos;))</div><div class="line">render(&#123;</div><div class="line">    tagName:&apos;h1&apos;,</div><div class="line">    style:&#123;color:red,font-size:23px&#125;,</div><div class="line">    text:&apos;haha&apos;</div><div class="line">&#125;,document.querySelector(&apos;#app&apos;));</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/08/react/" data-id="ciywf2ttu000agca2q5m3wu7u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/08/webpack/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webpack配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/08/Promise/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">promise</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/08/继承/">继承的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/表单元素/">表单元素总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/webpack/">webpack配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/react/">react笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/Promise/">promise</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

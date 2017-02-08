@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>gulp编译 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1npm install gulp
+gulp自带方法
+gulp.task(任务名字,任务的定义函数)
+1gulp.task(&amp;apos;name&amp;apos;,function()&amp;#123;&amp;#125;)
+
+gulp.src(文件路径)
+1gulp.src(&amp;apos;./app/**/*.index&amp;apos;)
+
+gulp.pipe()可读流导入到可写流里面
+
+gulp.dest(文件编译后的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp编译">
+<meta property="og:url" content="http://yoursite.com/2017/02/08/gulp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1npm install gulp
+gulp自带方法
+gulp.task(任务名字,任务的定义函数)
+1gulp.task(&amp;apos;name&amp;apos;,function()&amp;#123;&amp;#125;)
+
+gulp.src(文件路径)
+1gulp.src(&amp;apos;./app/**/*.index&amp;apos;)
+
+gulp.pipe()可读流导入到可写流里面
+
+gulp.dest(文件编译后的">
+<meta property="og:updated_time" content="2017-01-28T11:19:36.868Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gulp编译">
+<meta name="twitter:description" content="1npm install gulp
+gulp自带方法
+gulp.task(任务名字,任务的定义函数)
+1gulp.task(&amp;apos;name&amp;apos;,function()&amp;#123;&amp;#125;)
+
+gulp.src(文件路径)
+1gulp.src(&amp;apos;./app/**/*.index&amp;apos;)
+
+gulp.pipe()可读流导入到可写流里面
+
+gulp.dest(文件编译后的">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-gulp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/08/gulp/" class="article-date">
+  <time datetime="2017-02-08T03:49:18.462Z" itemprop="datePublished">2017-02-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gulp编译
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure>
+<h2 id="gulp自带方法"><a href="#gulp自带方法" class="headerlink" title="gulp自带方法"></a>gulp自带方法</h2><ul>
+<li><p>gulp.task(任务名字,任务的定义函数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;name&apos;,function()&#123;&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp.src(文件路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(&apos;./app/**/*.index&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp.pipe()可读流导入到可写流里面</p>
+</li>
+<li>gulp.dest(文件编译后的目录)</li>
+<li>gulp.watch(监听文件,[‘name’])</li>
+</ul>
+<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">    gulp.watch(&apos;./app/index.html&apos;,[&apos;html&apos;]);</div><div class="line">    gulp.watch(&apos;./app/img/**/*.&#123;jpg,png,gif,jpeg&#125;&apos;,[&apos;html&apos;]);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;default&apos;,[&apos;server&apos;,&apos;watch&apos;,...])</div></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>gulp-less:把less文件编译成css，**匹配所有的路径以及文件</li>
+<li>gulp-concat:多个css/js文件到一个文件[name].css/js</li>
+<li>gulp-clean-css: 压缩css文件</li>
+<li>gulp-rename: 重命名[name].min.css/js</li>
+<li>gulp-uglify: 压缩js文件</li>
+<li><p>gulp-inject: 自动把编译过来的css，js文件到注释地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!-- inject:css/js --&gt;</div><div class="line">   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/all.min.css&quot;&gt;</div><div class="line">&lt;!-- endinject --&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp-connect: 自动刷新页面的功能，实时刷新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect.reload()通知浏览器自动刷新</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/08/gulp/" data-id="ciywf2ttf0004gca29vt578r7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/02/08/less/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          less
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/02/08/es6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">es6基础</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/08/继承/">继承的几种方法</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/表单元素/">表单元素总结</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/webpack/">webpack配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/react/">react笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/08/Promise/">promise</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
