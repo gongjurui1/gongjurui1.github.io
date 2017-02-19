@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Hexo</title>
+  <title>html5新加属性 | Hexo</title>
   <meta name="author" content="John Doe" />
 
   
-  <meta name="description" content="title:音频播放属性audio常见的属性
-controls：是否使用浏览器自带的播放组件播放音乐，不写默认不用自带组件播放，写上使用浏览器自带的组件播放
-preload：页面打开的时候是否加载音频文件
-123auto：代表加载metadata：加载头部信息none：播放的时候加载
+  <meta name="description" content="语义化标签
+header,nav,section,footer,aside,article
 
-autopl" />
+画布canvas本地存储webStorage
+localStorage
+sessionStorage12与cookie区别：不适合大量数据的存储，由每个对服务器的请求来传递，速度慢并且效率不高localSt" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="html5新加属性" />
   <meta property="og:site_name" content="Hexo" />
 
   
@@ -72,14 +72,40 @@ autopl" />
       
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">html5新加属性</h1>
   
 
     </header>
     <div class="entry">
       
-        <hr>
-<h2 id="title-音频播放属性"><a href="#title-音频播放属性" class="headerlink" title="  title:音频播放属性"></a>  title:音频播放属性</h2><h2 id="audio常见的属性"><a href="#audio常见的属性" class="headerlink" title="audio常见的属性"></a>audio常见的属性</h2><ul>
+        <h3 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h3><ul>
+<li>header,nav,section,footer,aside,article</li>
+</ul>
+<h3 id="画布canvas"><a href="#画布canvas" class="headerlink" title="画布canvas"></a>画布canvas</h3><h3 id="本地存储webStorage"><a href="#本地存储webStorage" class="headerlink" title="本地存储webStorage"></a>本地存储webStorage</h3><ul>
+<li>localStorage</li>
+<li>sessionStorage<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">与cookie区别：不适合大量数据的存储，由每个对服务器的请求来传递，速度慢并且效率不高</div><div class="line">localStorage：可以存储大量数据，存储的数据没有时间限制，</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="拖放drag，drop"><a href="#拖放drag，drop" class="headerlink" title="拖放drag，drop"></a>拖放drag，drop</h3><ul>
+<li>draggable=’true’，可以使元素可拖放，</li>
+<li><p>被拖动的元素 -ondragstart，setData()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function drag()&#123;</div><div class="line">    ev.dataTransfer.setData(&apos;Text&apos;,ev.target.id)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>放在何处 - ondragover:阻止对元素的默认处理方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function allowDrop(ev)&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>进行放置 - ondrop:被拖动元素drag之后的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function drop(ev)&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    var ele = ev.dataTransfer.getData(&apos;Text&apos;);</div><div class="line">    ev.target.appendChild(document.getElementById(ele))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="地理位置"><a href="#地理位置" class="headerlink" title="地理位置"></a>地理位置</h3><h3 id="socket…"><a href="#socket…" class="headerlink" title="socket…"></a>socket…</h3><h3 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h3><ul>
+<li>input的type类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">email 邮箱验证</div><div class="line">url 包含url地址的输入域</div><div class="line">number </div><div class="line">range  进度条</div><div class="line">search</div><div class="line">color</div><div class="line">Date pickers(date,month,week,time,datetime,datetime-local)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>音频audio，视频video</p>
+</blockquote>
+<h3 id="audio常见的属性"><a href="#audio常见的属性" class="headerlink" title="audio常见的属性"></a>audio常见的属性</h3><ul>
 <li>controls：是否使用浏览器自带的播放组件播放音乐，不写默认不用自带组件播放，写上使用浏览器自带的组件播放</li>
 <li><p>preload：页面打开的时候是否加载音频文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">auto：代表加载</div><div class="line">metadata：加载头部信息</div><div class="line">none：播放的时候加载</div></pre></td></tr></table></figure>
@@ -91,9 +117,13 @@ autopl" />
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这里只有音频加载之后才能获取音频总时间</div></pre></td></tr></table></figure>
 </li>
 <li><p>currentTime：当前音频播放的时间</p>
-<h2 id="audio中常见的方法"><a href="#audio中常见的方法" class="headerlink" title="audio中常见的方法"></a>audio中常见的方法</h2></li>
+</li>
+</ul>
+<h3 id="audio中常见的方法"><a href="#audio中常见的方法" class="headerlink" title="audio中常见的方法"></a>audio中常见的方法</h3><ul>
 <li>play()：播放</li>
-<li>pause()：暂停<h2 id="audio中常用的事件"><a href="#audio中常用的事件" class="headerlink" title="audio中常用的事件"></a>audio中常用的事件</h2></li>
+<li>pause()：暂停</li>
+</ul>
+<h3 id="audio中常用的事件"><a href="#audio中常用的事件" class="headerlink" title="audio中常用的事件"></a>audio中常用的事件</h3><ul>
 <li>canplay()： 音频部分资源已经加载成功了，可以播放声音了；</li>
 </ul>
 
@@ -132,23 +162,23 @@ autopl" />
   <ul class="entry">
     
       <li>
+        <a href="/2017/02/19/demo/">动画animation</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/08/css/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/08/作用域/"></a>
+      </li>
+    
+      <li>
         <a href="/2017/02/08/继承/">继承的几种方法</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/表单元素/">表单元素总结</a>
-      </li>
-    
-      <li>
         <a href="/2017/02/08/webpack/">webpack配置</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/08/react/">react笔记</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/08/Promise/">promise</a>
       </li>
     
   </ul>

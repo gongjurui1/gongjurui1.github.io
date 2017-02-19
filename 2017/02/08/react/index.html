@@ -7,10 +7,9 @@
   <meta name="author" content="John Doe" />
 
   
-  <meta name="description" content="react,reactDOM,babel编译es6-es5this.props获取属性
-this.props.属性 
-this.props.childrenstate状态 ：只能用内部初始化，由组件内部改变
-this.setState({name:’gong’})调用一次，自动render一次，重新" />
+  <meta name="description" content="react优势
+严格来说，不是一个mvc模式，侧重于ui，view视图层，重复调用web组件react单向数据到视图流动，不同于angular的双向数据绑定操作虚拟DOM,节省了性能通过虚拟dom以diff算法按照最小的步骤作用到真实DOM上
+react,reactDOM,babel编译es6-es" />
   
 
   
@@ -76,13 +75,16 @@ this.setState({name:’gong’})调用一次，自动render一次，重新" />
     </header>
     <div class="entry">
       
-        <h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
+        <h2 id="react优势"><a href="#react优势" class="headerlink" title="react优势"></a>react优势</h2><blockquote>
+<p>严格来说，不是一个mvc模式，侧重于ui，view视图层，重复调用web组件<br>react单向数据到视图流动，不同于angular的双向数据绑定<br>操作虚拟DOM,节省了性能<br>通过虚拟dom以diff算法按照最小的步骤作用到真实DOM上</p>
+<h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
 <li>this.props.属性 </li>
 <li>this.props.children<h2 id="state状态-：只能用内部初始化，由组件内部改变"><a href="#state状态-：只能用内部初始化，由组件内部改变" class="headerlink" title="state状态 ：只能用内部初始化，由组件内部改变"></a>state状态 ：只能用内部初始化，由组件内部改变</h2></li>
 <li>this.setState({name:’gong’})调用一次，自动render一次，重新加载界面</li>
 <li>this.state.name 获取状态</li>
 <li>getInitialState获取初始状态</li>
 </ul>
+</blockquote>
 <h2 id="操作dom"><a href="#操作dom" class="headerlink" title="操作dom"></a>操作dom</h2><ul>
 <li>this.refs.[name] :refs是一个对象，[name]是key，值是对应的dom元素<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">getDefaultProps()&#123; </div><div class="line">    return &#123;name:&apos;hh&apos;&#125; 1.获取默认属性</div><div class="line">&#125;</div><div class="line">getInitialState()&#123;  </div><div class="line">   return &#123;count:1&#125; 2.获取初始状态 </div><div class="line">&#125;</div><div class="line">componentWillMount()&#123; </div><div class="line">    3.组建将要被加载在dom容器内部</div><div class="line">&#125;</div><div class="line">render()&#123;</div><div class="line">    4.组建挂载到DOM容器内部</div><div class="line">&#125;</div><div class="line">componentDidMount()&#123;</div><div class="line">    5.组件挂载完成</div><div class="line">&#125;</div><div class="line">shouldComponentUpdate(newProps,newState)&#123;&#125;</div><div class="line">    6.组件是否应该被更新</div><div class="line">&#125;</div><div class="line">componentWillUpdate()&#123;</div><div class="line">    7.组件将要被更新</div><div class="line">&#125;</div><div class="line">componentDidUpdate()&#123;</div><div class="line">    8.组件更新完成之后</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -126,23 +128,23 @@ this.setState({name:’gong’})调用一次，自动render一次，重新" />
   <ul class="entry">
     
       <li>
+        <a href="/2017/02/19/demo/">动画animation</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/08/css/"></a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/08/作用域/"></a>
+      </li>
+    
+      <li>
         <a href="/2017/02/08/继承/">继承的几种方法</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/表单元素/">表单元素总结</a>
-      </li>
-    
-      <li>
         <a href="/2017/02/08/webpack/">webpack配置</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/08/react/">react笔记</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/08/Promise/">promise</a>
       </li>
     
   </ul>

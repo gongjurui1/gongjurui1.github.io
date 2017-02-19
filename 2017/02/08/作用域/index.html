@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Seite 2 | Archiv: 2017 | Hexo</title>
+  <title>Hexo</title>
   <meta name="author" content="John Doe" />
 
+  
+  <meta name="description" content="title:scope作用域let和var区别，块级作用域
+这里setTimeout是异步的，0在不同浏览器是有最小时间的，当同步代码for循环完成，i=3
+123for(var i=0;i&amp;lt;3;i++)&amp;#123;    setTimeout(function()&amp;#123;alert(i)" />
   
 
   
@@ -55,97 +59,53 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-<h2 class="archive-title">2017</h2>
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T04:50:26.199Z"><a href="/2017/02/08/作用域/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
 
+    </header>
+    <div class="entry">
+      
+        <hr>
+<h2 id="title-scope作用域"><a href="#title-scope作用域" class="headerlink" title="title:scope作用域"></a>title:scope作用域</h2><h2 id="let和var区别，块级作用域"><a href="#let和var区别，块级作用域" class="headerlink" title="let和var区别，块级作用域"></a>let和var区别，块级作用域</h2><ul>
+<li><p>这里setTimeout是异步的，0在不同浏览器是有最小时间的，当同步代码for循环完成，i=3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(var i=0;i&lt;3;i++)&#123;</div><div class="line">    setTimeout(function()&#123;alert(i)&#125;,0)</div><div class="line">&#125;   输出三次3</div></pre></td></tr></table></figure>
+</li>
+<li><p>如何解决异步每次输出3问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for(var i=0;i&lt;3;i++)&#123;</div><div class="line">    ~(function(i)&#123;</div><div class="line">            setTimeout(function()&#123;alert(i)&#125;,0)</div><div class="line">    &#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>作用域的销毁不销毁问题</p>
+</blockquote>
 
-  <div class="archive">
+      
+    </div>
     
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/less/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/less/">less</a></h1>
-            
-          </header>
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
         </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/node/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/node/">node标配</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.462Z"><a href="/2017/02/08/gulp/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/gulp/">gulp编译</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.462Z"><a href="/2017/02/08/es6/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/es6/">es6基础</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.415Z"><a href="/2017/02/08/Content-Type/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/Content-Type/">http请求中content-type理解</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-08T03:49:18.415Z"><a href="/2017/02/08/angular/">2017-02-08</a></time>
-            
-              <h1 class="title"><a href="/2017/02/08/angular/">angular总结</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
-      <article class="post">
-        <div class="post-content">
-          <header>
-            <div class="icon"></div>
-            <time datetime="2017-02-07T12:41:51.963Z"><a href="/2017/02/07/hello-world/">2017-02-07</a></time>
-            
-              <h1 class="title"><a href="/2017/02/07/hello-world/">Hello World</a></h1>
-            
-          </header>
-        </div>
-      </article>
-    
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
   </div>
+</article>
+
+
+
 </div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
