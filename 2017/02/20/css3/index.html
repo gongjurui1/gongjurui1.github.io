@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Hexo</title>
+  <title>css3 | Hexo</title>
   <meta name="author" content="John Doe" />
 
   
-  <meta name="description" content="title:css基本清楚浮动方式
-clear:both;
-overflow:hidden/auto;
-height:222px;12345678910.clearfix&amp;#123;    display: inline-block;&amp;#125;.clearfix:after&amp;#123;    di" />
+  <meta name="description" content="column实现多列布局1234-webkit-column-width/column-width  列宽-webkit-column-count/column-count:auto 列数-webkit-column-gap/colummn-gap:每列间隔-webkit-column-rule/c" />
   
 
   
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-  
+  <meta property="og:title" content="css3" />
   <meta property="og:site_name" content="Hexo" />
 
   
@@ -66,24 +63,29 @@ height:222px;12345678910.clearfix&amp;#123;    display: inline-block;&amp;#125;.
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-02-08T10:04:19.423Z"><a href="/2017/02/08/css/">2017-02-08</a></time>
+        <time datetime="2017-02-20T10:18:53.496Z"><a href="/2017/02/20/css3/">2017-02-20</a></time>
       
       
   
-    <h1 class="title"></h1>
+    <h1 class="title">css3</h1>
   
 
     </header>
     <div class="entry">
       
-        <hr>
-<h2 id="title-css基本"><a href="#title-css基本" class="headerlink" title="title:css基本"></a>title:css基本</h2><h2 id="清楚浮动方式"><a href="#清楚浮动方式" class="headerlink" title="清楚浮动方式"></a>清楚浮动方式</h2><ul>
-<li>clear:both;</li>
-<li>overflow:hidden/auto;</li>
-<li>height:222px;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;</div><div class="line">    display: inline-block;</div><div class="line">&#125;</div><div class="line">.clearfix:after&#123;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    content:&apos;.&apos;;</div><div class="line">    clear: both;</div><div class="line">    visibility: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <h2 id="column实现多列布局"><a href="#column实现多列布局" class="headerlink" title="column实现多列布局"></a>column实现多列布局</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-column-width/column-width  列宽</div><div class="line">-webkit-column-count/column-count:auto 列数</div><div class="line">-webkit-column-gap/colummn-gap:每列间隔</div><div class="line">-webkit-column-rule/column-rule: 列之间的边框</div></pre></td></tr></table></figure>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li><p>transition 过渡动画,配合transform使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">    width: 100px;</div><div class="line">    transition: all .5s ease 0;</div><div class="line">    transition: width .5s ease-in-out 0, height .6s ease 0;</div><div class="line">&#125;</div><div class="line">img:hover&#123;</div><div class="line">    width: 200px;</div><div class="line">    ...</div><div class="line">    transform: translate(40px)平移  rotate(120deg)旋转  scale(1.5)缩放  skew(30deg)倾斜 </div><div class="line">&#125;</div><div class="line">轮播图css3...</div><div class="line">照片墙...</div></pre></td></tr></table></figure>
+</li>
+<li><p>animation动画 桢动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">transform/transform-origin  animation: circle 2s ease infinite;</div><div class="line"> @keyframes circle&#123;</div><div class="line">     0%&#123;transform&#125;</div><div class="line">     50%&#123;transform&#125;</div><div class="line">     100%&#123;transform&#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="webkit"><a href="#webkit" class="headerlink" title="webkit"></a>webkit</h2>
+<blockquote>
+<p>-webkit-animation-fill-mode: both; 规定动画在播放之前或之后，其动画效果是否可见。<br>-webkit-animation-name 动画名字<br>-webkit-animation-duration: 动画执行时间<br>-webkit-animation-delay: 动画延迟多久执行<br>-webkit-animation-timing-function: 动画运行方式</p>
+</blockquote>
+
       
     </div>
     

@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>Page 3 | Hexo</title>
+  <meta name="author" content="John Doe" />
+
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="Hexo" />
+
+  
+  
+
+  
+    <meta property="og:image" content="undefined" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Hexo</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T03:49:18.462Z"><a href="/2017/02/08/es6/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/es6/">es6基础</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="声明变量let-const"><a href="#声明变量let-const" class="headerlink" title="声明变量let const"></a>声明变量let const</h2><ul>
+<li>let块级作用域下生效</li>
+<li>const声明一个常量，不能修改，否则会报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">for(let i =0;i&lt;3;i++)&#123;</div><div class="line">    console.log(&apos;i=&apos;+i)</div><div class="line">    for(let i=0;i&lt;4;i++)&#123;</div><div class="line">        console.log(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">    const obj= &#123;name:&apos;gong&apos;&#125;</div><div class="line">    obj.name = &apos;ju&apos;是可以的</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">     name: &quot;ff&quot;,</div><div class="line">     age: 3,</div><div class="line">     hobby: [&apos;smoking&apos;, &apos;drinking&apos;],</div><div class="line">     home: &#123;</div><div class="line">         province: &apos;广东&apos;,</div><div class="line">         city: &apos;东莞&apos;</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line">let &#123;name,age,hobby,home&#125; = obj;</div><div class="line">let &#123;province,city&#125; = home;</div><div class="line">ajax(url,&#123;type=&apos;get&apos;&#125;)...</div></pre></td></tr></table></figure>
+<h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><ul>
+<li><code>${变量取值}</code><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="对象简写"><a href="#对象简写" class="headerlink" title="对象简写"></a>对象简写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name,//name:name,</div><div class="line">    getAge()&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="增加了类class"><a href="#增加了类class" class="headerlink" title="增加了类class"></a>增加了类class</h2><ul>
+<li>react引用class<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">export default class Xx extends React.Components&#123;</div><div class="line">    constructor(props)&#123;</div><div class="line">        super(props)</div><div class="line">        ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="模块的导入导出"><a href="#模块的导入导出" class="headerlink" title="模块的导入导出"></a>模块的导入导出</h2><h2 id="Promise-es6的原生对象，类"><a href="#Promise-es6的原生对象，类" class="headerlink" title="Promise: es6的原生对象，类"></a>Promise: es6的原生对象，类</h2><ul>
+<li>Promise.all</li>
+<li>Promise.race<h2 id="apply和…"><a href="#apply和…" class="headerlink" title="apply和…"></a>apply和…</h2></li>
+<li>相同Math.max.apply(null,ary) Math.max(…ary)</li>
+<li>ary.concat([1,2]) &lt;—&gt; […ary,…[1,2]]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function assign(target,...sources)&#123;</div><div class="line">    for(var i=0;i&lt;sources.length;i++)&#123;</div><div class="line">        for(var key in sources[i])&#123;</div><div class="line">            target[key]=sources[i][key]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="字符串的扩展方法"><a href="#字符串的扩展方法" class="headerlink" title="字符串的扩展方法"></a>字符串的扩展方法</h2><ul>
+<li>includes()</li>
+<li>startsWith()</li>
+<li>endWith()</li>
+<li>repeat()</li>
+<li></li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T03:49:18.415Z"><a href="/2017/02/08/angular/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/angular/">angular总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="angular指令"><a href="#angular指令" class="headerlink" title="angular指令"></a>angular指令</h2><ul>
+<li><p>内置指令 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ng-app ng-controller ng-bind(防闪烁)&lt;=&gt;&#123;&#123;&#125;&#125;  ng-cloak  ng-repeat  ng-if ng-hide/ng-show   </div><div class="line">ng-transclude</div></pre></td></tr></table></figure>
+</li>
+<li><p>自定义指令directive</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;div-demo&gt;&lt;/div-demo&gt;</div><div class="line">app.directive(&apos;divDemo&apos;,function(scope,element,attrs)&#123;</div><div class="line">    return &#123;</div><div class="line">        restrice: &apos;E&apos;,</div><div class="line">        template : &apos;&lt;div&gt;hello&lt;/div&gt;&apos;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="angular过滤器"><a href="#angular过滤器" class="headerlink" title="angular过滤器"></a>angular过滤器</h2><ul>
+<li><p>内置过滤器 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">uppercase,lowercase,number:3,currency:&apos;$&apos;:2,json:4,date:&apos;yyyy年mm月dd日 hh:mm:ss&apos;,limitTo:2,orderBy:&apos;math&apos;:false,filter:&#123;&#125;</div><div class="line">延迟500ms加载，失去焦点时刷新</div><div class="line">&lt;input type=&quot;text&quot; ng-model=&quot;name&quot; ng-model-options=&quot;&#123;debounce:500&#125;/&#123;updateOn:blur&#125;&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>自定义过滤器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    控制器中使用过滤器，依赖注入</div><div class="line">app.filter(&apos;caption&apos;,function($scope,uppercaseFilter,$interval,$http,$location,$sce,$routeParam,Books...)&#123;</div><div class="line">    return function(data,param1,param2...)&#123;</div><div class="line">        ...处理自定义过滤器</div><div class="line">        return data;返回的是过滤后的结果</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="服务-provider-factory-service-value-constant"><a href="#服务-provider-factory-service-value-constant" class="headerlink" title="服务 provider factory service value constant"></a>服务 provider factory service value constant</h2><ul>
+<li><p>provider</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">app.provider(&apos;name&apos;,function()&#123;</div><div class="line">    this.$get = function()&#123;</div><div class="line">        return &#123;</div><div class="line">            name:function()&#123;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>factory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">app.factory(&apos;name&apos;,function()&#123;</div><div class="line">    return &#123;</div><div class="line">        name:function()&#123;&#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">app.service(&apos;name&apos;,function()&#123;</div><div class="line">    this.name = function()&#123;&#125;</div><div class="line">    this...</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>value</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">app.value(&apos;&apos;,function()&#123;</div><div class="line">    name:function()&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>constant</p>
+</li>
+</ul>
+<h2 id="双向数据绑定-ng-model"><a href="#双向数据绑定-ng-model" class="headerlink" title="双向数据绑定 ng-model"></a>双向数据绑定 ng-model</h2><ul>
+<li><p>$watch:数据影响视图 ,和ng-change一样，ng-change只能监听输入框，不能监听页面数据变化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$scope.$watch(&apos;age&apos;,function(newVal,oldVal)&#123;</div><div class="line">   </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>$apply:视图影响数据 $scope.$apply()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">数据&lt;===&gt;视图</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="数据交互方式"><a href="#数据交互方式" class="headerlink" title="数据交互方式"></a>数据交互方式</h2><ul>
+<li>get,post,jsonp<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$http.get(url).then(function(res)&#123;res.data&#125;)</div><div class="line">$http.post(url,data).then(function(res)&#123;res.data&#125;)</div><div class="line">$http.jsonp(&apos;http://localhost:8080/jsonp?callback=JSON_CALLBACK&apos;).then(function(res)&#123;res.data&#125;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T03:49:18.415Z"><a href="/2017/02/08/Content-Type/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/Content-Type/">http请求中content-type理解</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="常见的媒体格式类型"><a href="#常见的媒体格式类型" class="headerlink" title="常见的媒体格式类型"></a>常见的媒体格式类型</h2><ul>
+<li>text/html:HTML格式</li>
+<li>text/css</li>
+<li>text/plain ： 纯文本格式</li>
+<li>text/xml：xml格式</li>
+<li>image/gif：gif图片格式</li>
+<li>image/jpeg：jpg图片格式</li>
+<li>image/png：png图片格式<h2 id="以application开头的媒体格式类型"><a href="#以application开头的媒体格式类型" class="headerlink" title="以application开头的媒体格式类型"></a>以application开头的媒体格式类型</h2></li>
+<li>application/xhtml+xml :XHTML格式</li>
+<li>application/x-javascript:</li>
+<li>application/json ：json数据格式</li>
+<li>application/pdf </li>
+<li>application/msword: word文档格式</li>
+<li>application/octet-stream :二进制流数据</li>
+<li><p>application/x-www-form-urlencoded: 表单提交数据，不支持图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;form encType=&quot;&quot;&gt;&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>multipart/form-data:表单中上传图片需要加上</p>
+</li>
+<li>h5的formData</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-07T12:41:51.963Z"><a href="/2017/02/07/hello-world/">2017-02-07</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/07/hello-world/">Hello World</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+<nav id="pagination">
+  
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">Recent Posts</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2017/03/02/移动端布局/">移动端布局</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/27/html/">html</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/26/ajax/">ajax</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/23/newlearn/">new knowledge</a>
+      </li>
+    
+      <li>
+        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2017 John Doe
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

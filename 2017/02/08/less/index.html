@@ -82,7 +82,10 @@ reference编译的时候不用编译代码，调用使用12@import &amp;apos;bas
 </li>
 </ul>
 <h2 id="文件依赖"><a href="#文件依赖" class="headerlink" title="文件依赖"></a>文件依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.music&#123;</div><div class="line">    .music-btn&#123;</div><div class="line">        &amp;.play&#123;</div><div class="line">            .play.music-btn并列</div><div class="line">            &amp;:after&#123;</div><div class="line">                .play.music-btn:after伪类伪元素</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@color-white: #ddd;</div><div class="line">css雪碧图引用（图片大小）</div><div class="line">.spriteFn(@x:0,@y:0)&#123;</div><div class="line">    background: url(&apos;&apos; no-repeat @x @y)</div><div class="line">&#125;</div><div class="line">.transitionFn(@property:all,@duration:1s,@time-function:linear,@delay:0s)&#123;</div><div class="line">    -webkit-transition: @arguments;代表所有参数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>参数雪碧图或者动画设置名字效果等不同<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@color-white: #ddd;</div><div class="line">css雪碧图引用（图片大小）</div><div class="line">.spriteFn(@x:0,@y:0)&#123;</div><div class="line">    background: url(&apos;&apos; no-repeat @x @y)</div><div class="line">&#125;</div><div class="line">.transitionFn(@property:all,@duration:1s,@time-function:linear,@delay:0s)&#123;</div><div class="line">    -webkit-transition: @arguments;代表所有参数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -106,7 +109,7 @@ reference编译的时候不用编译代码，调用使用12@import &amp;apos;bas
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -115,27 +118,27 @@ reference编译的时候不用编译代码，调用使用12@import &amp;apos;bas
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
-        <a href="/2017/02/19/demo/">动画animation</a>
+        <a href="/2017/03/02/移动端布局/">移动端布局</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/css/"></a>
+        <a href="/2017/02/27/html/">html</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/作用域/"></a>
+        <a href="/2017/02/26/ajax/">ajax</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/继承/">继承的几种方法</a>
+        <a href="/2017/02/23/newlearn/">new knowledge</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/webpack/">webpack配置</a>
+        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>

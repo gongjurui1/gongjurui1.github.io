@@ -80,7 +80,7 @@ const声明一个常量，不能修改，否则会报错12345678910for(let i =0;
 <li>const声明一个常量，不能修改，否则会报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">for(let i =0;i&lt;3;i++)&#123;</div><div class="line">    console.log(&apos;i=&apos;+i)</div><div class="line">    for(let i=0;i&lt;4;i++)&#123;</div><div class="line">        console.log(i)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&#123;</div><div class="line">    const obj= &#123;name:&apos;gong&apos;&#125;</div><div class="line">    obj.name = &apos;ju&apos;是可以的</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">     name: &quot;ff&quot;,</div><div class="line">     age: 3,</div><div class="line">     hobby: [&apos;smoking&apos;, &apos;drinking&apos;],</div><div class="line">     home: &#123;</div><div class="line">         province: &apos;广东&apos;,</div><div class="line">         city: &apos;东莞&apos;</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line">let &#123;name,age,hobby,home&#125; = obj;</div><div class="line">let &#123;province,city&#125; = home;</div></pre></td></tr></table></figure>
+<h2 id="对象解构"><a href="#对象解构" class="headerlink" title="对象解构"></a>对象解构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">let obj = &#123;</div><div class="line">     name: &quot;ff&quot;,</div><div class="line">     age: 3,</div><div class="line">     hobby: [&apos;smoking&apos;, &apos;drinking&apos;],</div><div class="line">     home: &#123;</div><div class="line">         province: &apos;广东&apos;,</div><div class="line">         city: &apos;东莞&apos;</div><div class="line">     &#125;</div><div class="line">&#125;;</div><div class="line">let &#123;name,age,hobby,home&#125; = obj;</div><div class="line">let &#123;province,city&#125; = home;</div><div class="line">ajax(url,&#123;type=&apos;get&apos;&#125;)...</div></pre></td></tr></table></figure>
 <h2 id="模版字符串"><a href="#模版字符串" class="headerlink" title="模版字符串"></a>模版字符串</h2><ul>
 <li><code>${变量取值}</code><h2 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h2><h2 id="对象简写"><a href="#对象简写" class="headerlink" title="对象简写"></a>对象简写</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name,//name:name,</div><div class="line">    getAge()&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
@@ -95,6 +95,13 @@ const声明一个常量，不能修改，否则会报错12345678910for(let i =0;
 <li>相同Math.max.apply(null,ary) Math.max(…ary)</li>
 <li>ary.concat([1,2]) &lt;—&gt; […ary,…[1,2]]<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function assign(target,...sources)&#123;</div><div class="line">    for(var i=0;i&lt;sources.length;i++)&#123;</div><div class="line">        for(var key in sources[i])&#123;</div><div class="line">            target[key]=sources[i][key]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return target;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
+</ul>
+<h2 id="字符串的扩展方法"><a href="#字符串的扩展方法" class="headerlink" title="字符串的扩展方法"></a>字符串的扩展方法</h2><ul>
+<li>includes()</li>
+<li>startsWith()</li>
+<li>endWith()</li>
+<li>repeat()</li>
+<li></li>
 </ul>
 
       
@@ -119,7 +126,7 @@ const声明一个常量，不能修改，否则会报错12345678910for(let i =0;
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -128,27 +135,27 @@ const声明一个常量，不能修改，否则会报错12345678910for(let i =0;
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
-        <a href="/2017/02/19/demo/">动画animation</a>
+        <a href="/2017/03/02/移动端布局/">移动端布局</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/css/"></a>
+        <a href="/2017/02/27/html/">html</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/作用域/"></a>
+        <a href="/2017/02/26/ajax/">ajax</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/继承/">继承的几种方法</a>
+        <a href="/2017/02/23/newlearn/">new knowledge</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/webpack/">webpack配置</a>
+        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>

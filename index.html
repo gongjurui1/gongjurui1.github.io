@@ -62,24 +62,351 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-02-19T08:37:44.298Z"><a href="/2017/02/19/demo/">2017-02-19</a></time>
+        <time datetime="2017-03-02T13:11:10.713Z"><a href="/2017/03/02/移动端布局/">2017-03-02</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/02/19/demo/">动画animation</a></h1>
+    <h1 class="title"><a href="/2017/03/02/移动端布局/">移动端布局</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="京东floor"><a href="#京东floor" class="headerlink" title="京东floor"></a>京东floor</h2><blockquote>
-<p>demo见offer-JDfloor</p>
-<ul>
-<li>滚动楼层对应变化</li>
-<li>点击楼层对应内容变化<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">window.onscroll=function()&#123;</div><div class="line">    if(scrollTop &gt; 每个楼层对应的offset().top)</div><div class="line">    == 当前最后一个符合的有红色背景.red&#123;color:red&#125;</div><div class="line">    给每个li加上一个 data-top自定义属性表示div对应的offsettop</div><div class="line">&#125;</div><div class="line">$(&apos;li&apos;).click(function()&#123;</div><div class="line">    window.onscroll=null; 制空滚动条效果</div><div class="line">    </div><div class="line">    move(target) //target代表当前点击的data-top</div><div class="line">    _move();</div><div class="line">    function _move()&#123;</div><div class="line">        clearInterval(_move);</div><div class="line">        if(scrolltop&gt;target)&#123; 向上运动 </div><div class="line">                边界判断 唤醒window.onscroll= ...fn</div><div class="line">                document.body.scrollTop-step;</div><div class="line">                return ;</div><div class="line">        &#125;else if(scrolltop&lt;target)&#123;  向下运动</div><div class="line">            同上</div><div class="line">        &#125;else&#123;&#125;</div><div class="line">        window.setInterval(_move,10)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;)</div></pre></td></tr></table></figure></li>
+        <h2 id="关于市rem还是px布局，图片处理等原因"><a href="#关于市rem还是px布局，图片处理等原因" class="headerlink" title="关于市rem还是px布局，图片处理等原因"></a>关于市rem还是px布局，图片处理等原因</h2><ul>
+<li>如果项目需求只是手机设备，可使用px</li>
+<li>如果各种移动设备，使用rem<h2 id="资料见http-www-imooc-com-article-1115"><a href="#资料见http-www-imooc-com-article-1115" class="headerlink" title="资料见http://www.imooc.com/article/1115"></a>资料见<a href="http://www.imooc.com/article/1115" target="_blank" rel="external">http://www.imooc.com/article/1115</a></h2></li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;标题&quot;&gt;</div><div class="line">启用webapp全屏模式ios</div><div class="line">&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot; /&gt; &lt;meta name=&quot;apple-touch-fullscreen&quot; content=&quot;yes&quot; /&gt; </div><div class="line"></div><div class="line">```  </div><div class="line"></div><div class="line">- 百度禁止转码，避免广告等信息</div></pre></td></tr></table></figure>
+ <meta http-equiv="Cache-Control" content="no-siteapp">
+
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line">-  进制数字显示手机号</div><div class="line">```angular2html</div><div class="line">&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot; /&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>优先使用最新版本的ie和chrome<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>viewport模版<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no&quot; name=&quot;viewport&quot;&gt; &lt;meta content=&quot;yes&quot; name=&quot;apple-mobile-web-app-capable&quot;&gt; &lt;meta content=&quot;black&quot; name=&quot;apple-mobile-web-app-status-bar-style&quot;&gt; &lt;meta content=&quot;telephone=no&quot; name=&quot;format-detection&quot;&gt; &lt;meta content=&quot;email=no&quot; name=&quot;format-detection&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>移动端事件<br>window.orientation 屏幕旋转事件，+，-90横屏，0，180竖屏</p>
 </blockquote>
 
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-27T10:32:27.273Z"><a href="/2017/02/27/html/">2017-02-27</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/27/html/">html</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="position"><a href="#position" class="headerlink" title="position"></a>position</h2><ul>
+<li>relative 会占文档流位置</li>
+<li>absolute 不占文档流位置和float一样飘在文档流上面</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-26T11:32:02.076Z"><a href="/2017/02/26/ajax/">2017-02-26</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/26/ajax/">ajax</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="escape-encodeURI-encodeURIComponent"><a href="#escape-encodeURI-encodeURIComponent" class="headerlink" title="escape,encodeURI,encodeURIComponent"></a>escape,encodeURI,encodeURIComponent</h2><ul>
+<li><p>如果只是编码字符串，不和URL有半毛钱关系，那么用escape。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">不会被编码 ASCII字母、数字、@*/+</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你需要编码整个URL，然后需要使用这个URL，那么用encodeURI</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">不会对下列字符编码  ASCII字母、数字、~!@#$&amp;*()=:/,;?+&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当你需要编码URL中的参数的时候，那么encodeURIComponent是最好方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">不会对下列字符编码 ASCII字母、数字、~!*()&apos;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-23T02:30:33.823Z"><a href="/2017/02/23/newlearn/">2017-02-23</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/23/newlearn/">new knowledge</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>LESS</p>
+</blockquote>
+<h2 id="变量，Mixin，函数"><a href="#变量，Mixin，函数" class="headerlink" title="变量，Mixin，函数"></a>变量，Mixin，函数</h2><ul>
+<li>变量</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-22T10:49:28.466Z"><a href="/2017/02/22/浏览器默认的滚动条/">2017-02-22</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/22/浏览器默认的滚动条/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <hr>
+<h2 id="title-浏览器的默认行为"><a href="#title-浏览器的默认行为" class="headerlink" title="title:浏览器的默认行为"></a>title:浏览器的默认行为</h2><h2 id="浏览器默认的滚动条"><a href="#浏览器默认的滚动条" class="headerlink" title="浏览器默认的滚动条"></a>浏览器默认的滚动条</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">::-webkit-scrollbar-track-piece &#123;</div><div class="line">    background-color:#f5f5f5;</div><div class="line">    border-left:1px solid #d2d2d2;</div><div class="line">&#125;</div><div class="line">::-webkit-scrollbar &#123;</div><div class="line">    width:6px;</div><div class="line">    height:6px;</div><div class="line">&#125;</div><div class="line">::-webkit-scrollbar-thumb &#123;</div><div class="line">    background-color:#c2c2c2;</div><div class="line">    background-clip:padding-box;</div><div class="line">    border:1px solid #979797;</div><div class="line">    min-height:28px;</div><div class="line">&#125;</div><div class="line">::-webkit-scrollbar-thumb:hover &#123;</div><div class="line">    border:1px solid #636363;</div><div class="line">    background-color:#929292;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="浏览器的版本信息的"><a href="#浏览器的版本信息的" class="headerlink" title="浏览器的版本信息的"></a>浏览器的版本信息的</h2><ul>
+<li>navigator.userAgent 用户代理</li>
+<li>navigator.appCodeName 浏览器代号</li>
+<li>navigator.appName 浏览器名称</li>
+<li>navigator.appVersion 浏览器版本</li>
+<li>navigator.cookieEnabled 启用cookies</li>
+<li>navigator.platform 硬件平台</li>
+<li>navigator.systemLanguage 用户代理语言</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-20T10:18:53.496Z"><a href="/2017/02/20/css3/">2017-02-20</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/20/css3/">css3</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="column实现多列布局"><a href="#column实现多列布局" class="headerlink" title="column实现多列布局"></a>column实现多列布局</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-column-width/column-width  列宽</div><div class="line">-webkit-column-count/column-count:auto 列数</div><div class="line">-webkit-column-gap/colummn-gap:每列间隔</div><div class="line">-webkit-column-rule/column-rule: 列之间的边框</div></pre></td></tr></table></figure>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
+<li><p>transition 过渡动画,配合transform使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">    width: 100px;</div><div class="line">    transition: all .5s ease 0;</div><div class="line">    transition: width .5s ease-in-out 0, height .6s ease 0;</div><div class="line">&#125;</div><div class="line">img:hover&#123;</div><div class="line">    width: 200px;</div><div class="line">    ...</div><div class="line">    transform: translate(40px)平移  rotate(120deg)旋转  scale(1.5)缩放  skew(30deg)倾斜 </div><div class="line">&#125;</div><div class="line">轮播图css3...</div><div class="line">照片墙...</div></pre></td></tr></table></figure>
+</li>
+<li><p>animation动画 桢动画</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">transform/transform-origin  animation: circle 2s ease infinite;</div><div class="line"> @keyframes circle&#123;</div><div class="line">     0%&#123;transform&#125;</div><div class="line">     50%&#123;transform&#125;</div><div class="line">     100%&#123;transform&#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>-webkit-animation-fill-mode: both; 规定动画在播放之前或之后，其动画效果是否可见。<br>-webkit-animation-name 动画名字<br>-webkit-animation-duration: 动画执行时间<br>-webkit-animation-delay: 动画延迟多久执行<br>-webkit-animation-timing-function: 动画运行方式</p>
+</blockquote>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-19T12:26:23.080Z"><a href="/2017/02/19/事件/">2017-02-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/19/事件/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <hr>
+<h2 id="title-js事件"><a href="#title-js事件" class="headerlink" title="title:js事件"></a>title:js事件</h2><p>##事件</p>
+<ul>
+<li>onmousewheel 滚轮滚动 ie google<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">照片墙效果，六5</div><div class="line">    document.body.addEventListener(&apos;DOMMouseScroll&apos;,fn)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>e.wheelDelta 下:-120  上:120 chrome/ie<br>e.detail     下：3    上: -3  firefox</p>
+</blockquote>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-19T08:37:44.298Z"><a href="/2017/02/19/demo/">2017-02-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/19/demo/">动画逻辑</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="京东floor"><a href="#京东floor" class="headerlink" title="京东floor"></a>京东floor</h2><ul>
+<li>滚动楼层对应变化</li>
+<li>点击楼层对应内容变化<blockquote>
+<p>demo见offer-JDfloor</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">window.onscroll=function()&#123;</div><div class="line">    if(scrollTop &gt; 每个楼层对应的offset().top)</div><div class="line">    == 当前最后一个符合的有红色背景.red&#123;color:red&#125;</div><div class="line">    给每个li加上一个 data-top自定义属性表示div对应的offsettop</div><div class="line">&#125;</div><div class="line">$(&apos;li&apos;).click(function()&#123;</div><div class="line">    window.onscroll=null; 制空滚动条效果</div><div class="line">    </div><div class="line">    move(target) //target代表当前点击的data-top</div><div class="line">    _move();</div><div class="line">    function _move()&#123;</div><div class="line">        clearInterval(_move);</div><div class="line">        if(scrolltop&gt;target)&#123; 向上运动 </div><div class="line">                边界判断 唤醒window.onscroll= ...fn</div><div class="line">                document.body.scrollTop-step;</div><div class="line">                return ;</div><div class="line">        &#125;else if(scrolltop&lt;target)&#123;  向下运动</div><div class="line">            同上</div><div class="line">        &#125;else&#123;&#125;</div><div class="line">        window.setInterval(_move,10)</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
     
@@ -120,9 +447,10 @@
 <h2 id="title-css基本"><a href="#title-css基本" class="headerlink" title="title:css基本"></a>title:css基本</h2><h2 id="清楚浮动方式"><a href="#清楚浮动方式" class="headerlink" title="清楚浮动方式"></a>清楚浮动方式</h2><ul>
 <li>clear:both;</li>
 <li>overflow:hidden/auto;</li>
-<li>height:222px;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;</div><div class="line">    display: inline-block;</div><div class="line">&#125;</div><div class="line">.clearfix:after&#123;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    content:&apos;.&apos;;</div><div class="line">    clear: both;</div><div class="line">    visibility: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li>height:222px;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.clearfix&#123;</div><div class="line">    display: inline-block;</div><div class="line">&#125;</div><div class="line">.clearfix:after&#123;</div><div class="line">    display: block;</div><div class="line">    height: 0;</div><div class="line">    content:&apos;.&apos;;</div><div class="line">    clear: both;</div><div class="line">    visibility: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-
+<h2 id="webkit"><a href="#webkit" class="headerlink" title="webkit"></a>webkit</h2>
       
     </div>
     
@@ -192,387 +520,11 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:42.477Z"><a href="/2017/02/08/继承/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/继承/">继承的几种方法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="原型继承"><a href="#原型继承" class="headerlink" title="原型继承"></a>原型继承</h3><ul>
-<li>继承的是父类的公有和私有的，作为自己公有的</li>
-<li>实现方式，子类的原型指向父类的实例：Son.prototype = new Person();<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function Person(name)&#123;</div><div class="line">    this.name = name;</div><div class="line">&#125;</div><div class="line">Person.prototype.getName = function()&#123;</div><div class="line">    return this.name;</div><div class="line">&#125;</div><div class="line">function Child(age)&#123;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line">Child.prototype = new Person(&apos;gg&apos;);</div><div class="line">var child = new Child(22);</div><div class="line">console.log(child.getName(),child.age,child.name);</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="this继承"><a href="#this继承" class="headerlink" title="this继承"></a>this继承</h3><ul>
-<li>继承的是父类的私有的属性和方法，作为自己私有的</li>
-<li>父类当作一个函数在子类中运行，<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">    this.name = &apos;a&apos;;</div><div class="line">    this.haha = function()&#123;</div><div class="line">        console.log(&apos;private haha&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">Person.prototype.sayName = function()&#123;</div><div class="line">    console.log(this.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function Child()&#123;</div><div class="line">    Person.apply(this,arguments);</div><div class="line">&#125;</div><div class="line">var child = new Child();</div><div class="line">child.name; //a</div><div class="line">child.haha();//private haha</div><div class="line">child.sayName()//错误</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="冒充对象继承"><a href="#冒充对象继承" class="headerlink" title="冒充对象继承"></a>冒充对象继承</h3><ul>
-<li>父类中私有+共有的作为自己私有的属性和方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">function Child()&#123;</div><div class="line">    var child = new Parent();</div><div class="line">    for(var key in child)&#123;</div><div class="line">        child.hasOwnProperty(key)&#123;</div><div class="line">            this[key]=child[key];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    child = null;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h3><ul>
-<li>继承原型上的公有的属性和方法</li>
-<li>继承方式:子类<strong>proto</strong> = Parent.prototype;<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Child.prototype.__proto__ = Parent.prototype;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Child.prototype = Object.create(Parent.prototype);</div><div class="line">Object.setPrototypeOf(child.prototype,Parent.prototype)</div><div class="line">==〉utils.inherits(Child,Parent)</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/webpack/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/webpack/">webpack配置</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><ul>
-<li><p>文件package.json</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;script&quot;: &#123;</div><div class="line">        &quot;dev&quot;: &quot;webpack-dev-server --progress --profile --colors --hot --inline&quot;,</div><div class="line">        &quot;build&quot;:&quot;webpack --progress --profile --colors&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>webpack.config.js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var HtmlwebpackPlugin = require(&apos;html-webpack-plugin&apos;);</div><div class="line">var OpenBrowswerWebpackPulgin = require(&apos;open-browser-webpack-plugin&apos;);</div><div class="line">var ROOT_PATH = path.resolve(__dirname);</div><div class="line">var APP_PATH = path.resolve(ROOT_PATH, &apos;app&apos;);</div><div class="line">var BUILD_PATH = path.resolve(ROOT_PATH, &apos;build&apos;);</div><div class="line">var TEM_PATH = path.resolve(ROOT_PATH, &apos;templates&apos;);</div><div class="line"></div><div class="line">module.exports= &#123;</div><div class="line">  entry: &#123;</div><div class="line">    app: path.resolve(APP_PATH, &apos;index.jsx&apos;),</div><div class="line">    mobile: path.resolve(APP_PATH, &apos;mobile.jsx&apos;),</div><div class="line">    vendors: [&apos;jquery&apos;, &apos;moment&apos;]</div><div class="line">  &#125;,</div><div class="line">  output: &#123;</div><div class="line">    path: BUILD_PATH,</div><div class="line">    filename: &apos;[name].js&apos;</div><div class="line">  &#125;,</div><div class="line">  resolve: &#123;</div><div class="line">    extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.jsx&apos;]</div><div class="line">  &#125;,</div><div class="line">  //启动dev source map，出错以后就会采用source-map的形式直接显示你出错代码的位置。</div><div class="line">  devtool: &apos;eval-source-map&apos;,</div><div class="line">  //enable dev server</div><div class="line">  devServer: &#123;</div><div class="line">    contentBase:BUILD_PATH,</div><div class="line">    historyApiFallback: true,</div><div class="line">    hot: true,</div><div class="line">    inline: true,</div><div class="line">    progress: true,</div><div class="line">    //只要配置dev server map这个参数就可以了</div><div class="line">    proxy:&#123;</div><div class="line">      &apos;/api/*&apos;:&#123;</div><div class="line">        target: &apos;http://localhost:8080&apos;,</div><div class="line">        secure: false</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  //babel重要的loader在这里</div><div class="line">  module: &#123;</div><div class="line">    //loader前执行处理，这样每次npm run start的时候就可以看到jshint的提示信息</div><div class="line">    preLoaders: [</div><div class="line">       &#123;</div><div class="line">         test: /\.jsx?$/,</div><div class="line">         include: APP_PATH,</div><div class="line">         loader: &quot;jshint-loader&quot;</div><div class="line">       &#125;</div><div class="line">     ],</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.jsx?$/,</div><div class="line">        loader: &apos;babel&apos;,</div><div class="line">        include: APP_PATH,</div><div class="line">        query: &#123;</div><div class="line">          //添加两个presents 使用这两种presets处理js或者jsx文件</div><div class="line">          presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.scss$/,</div><div class="line">        loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">      &#125;,</div><div class="line">      &#123;//该方法可以省去.babelrc文件</div><div class="line">        test: /\.js$/,</div><div class="line">        loader: &apos;babel?presets[]=es2015&amp;presets[]=react&apos;,</div><div class="line">        exclude: /node_modules/</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">        loader: &apos;style!css&apos;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test:/\.(png|jpg|gif|jpeg|gif)$/,</div><div class="line">        loader: &apos;url-loader&apos;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.(svg|ttf|woff|woff2|eot)/,</div><div class="line">        loader: &apos;url&apos;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  //配置jshint的选项，支持es6的校验</div><div class="line">   // any jshint option http://www.jshint.com/docs/options/</div><div class="line">   jshint: &#123;</div><div class="line">     &quot;esnext&quot;: true</div><div class="line">   &#125;,</div><div class="line">  plugins: [</div><div class="line">    new OpenBrowswerWebpackPulgin(&#123;</div><div class="line">        url:&apos;http://localhost:8080&apos;</div><div class="line">    &#125;),</div><div class="line">    new webpack.HotModuleReplacementPlugin(),</div><div class="line">    //这个使用uglifyJs压缩你的js代码</div><div class="line">    new webpack.optimize.UglifyJsPlugin(&#123;minimize: true&#125;),</div><div class="line">    new HtmlwebpackPlugin(&#123;</div><div class="line">      title: &apos;My first react app&apos;,</div><div class="line">      template: path.resolve(TEM_PATH, &apos;index.html&apos;),</div><div class="line">      filename: &apos;index.html&apos;,</div><div class="line">      chunks: [&apos;app&apos;, &apos;vendors&apos;],</div><div class="line">      inject: &apos;body&apos;</div><div class="line">    &#125;),</div><div class="line">    new HtmlwebpackPlugin(&#123;</div><div class="line">      title: &apos;Hello Mobile app&apos;,</div><div class="line">      template: path.resolve(TEM_PATH, &apos;mobile.html&apos;),</div><div class="line">      filename: &apos;mobile.html&apos;</div><div class="line">    &#125;),</div><div class="line">    //把入口文件里面的数组打包成verdors.js</div><div class="line">    new webpack.optimize.CommonsChunkPlugin(&apos;vendors&apos;, &apos;vendors.js&apos;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/Promise/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/Promise/">promise</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><h2 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h2><h2 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race"></a>Promise.race</h2>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/表单元素/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/表单元素/">表单元素总结</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="表单元素样式"><a href="#表单元素样式" class="headerlink" title="表单元素样式"></a>表单元素样式</h2><ul>
-<li>outline：none; 点击input，textarea等外层没有线</li>
-<li><p>apperance:none; 失去表单元素原有的外观,例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">div.ui-select select&#123;</div><div class="line">    -webkit-appearance:none;</div><div class="line">    border: none;</div><div class="line">    padding-right: 12px;</div><div class="line"> </div><div class="line">&#125;</div><div class="line">div.ui-select:after&#123;</div><div class="line">    position: absolute;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    content: &apos;&apos;;</div><div class="line">    border: 6px solid transparent;</div><div class="line">    border-top: 6px solid red;</div><div class="line">    color: red;</div><div class="line">    pointer-events:none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>单行省略号，多行省略号（css3属性）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.single-line&#123;</div><div class="line">    display: block;</div><div class="line">    overflow:hidden;</div><div class="line">    white-space: nowrap;</div><div class="line">    text-overflow: ellipsis;</div><div class="line">&#125;</div><div class="line">.double-ling&#123;</div><div class="line">    display:-webkit-box;</div><div class="line">    -webkit-box-orient: vetical;</div><div class="line">    overflow:hidden;</div><div class="line">    text-overflow:ellipsis;</div><div class="line">    -webkit-line-clamp: 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>input:before input:checked:after</p>
-</li>
-</ul>
-<h2 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h2><ul>
-<li>button点击事件，可将事件绑定到form上面onSubmit()</li>
-<li>input,select-option标签绑定onchange事件<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input.on(&apos;input&apos;,function()&#123;&#125;&#125;)</div><div class="line">select.onchange=function(e)&#123;</div><div class="line">    e.target.value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/react/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/react/">react笔记</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="react优势"><a href="#react优势" class="headerlink" title="react优势"></a>react优势</h2><blockquote>
-<p>严格来说，不是一个mvc模式，侧重于ui，view视图层，重复调用web组件<br>react单向数据到视图流动，不同于angular的双向数据绑定<br>操作虚拟DOM,节省了性能<br>通过虚拟dom以diff算法按照最小的步骤作用到真实DOM上</p>
-<h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
-<li>this.props.属性 </li>
-<li>this.props.children<h2 id="state状态-：只能用内部初始化，由组件内部改变"><a href="#state状态-：只能用内部初始化，由组件内部改变" class="headerlink" title="state状态 ：只能用内部初始化，由组件内部改变"></a>state状态 ：只能用内部初始化，由组件内部改变</h2></li>
-<li>this.setState({name:’gong’})调用一次，自动render一次，重新加载界面</li>
-<li>this.state.name 获取状态</li>
-<li>getInitialState获取初始状态</li>
-</ul>
-</blockquote>
-<h2 id="操作dom"><a href="#操作dom" class="headerlink" title="操作dom"></a>操作dom</h2><ul>
-<li>this.refs.[name] :refs是一个对象，[name]是key，值是对应的dom元素<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">getDefaultProps()&#123; </div><div class="line">    return &#123;name:&apos;hh&apos;&#125; 1.获取默认属性</div><div class="line">&#125;</div><div class="line">getInitialState()&#123;  </div><div class="line">   return &#123;count:1&#125; 2.获取初始状态 </div><div class="line">&#125;</div><div class="line">componentWillMount()&#123; </div><div class="line">    3.组建将要被加载在dom容器内部</div><div class="line">&#125;</div><div class="line">render()&#123;</div><div class="line">    4.组建挂载到DOM容器内部</div><div class="line">&#125;</div><div class="line">componentDidMount()&#123;</div><div class="line">    5.组件挂载完成</div><div class="line">&#125;</div><div class="line">shouldComponentUpdate(newProps,newState)&#123;&#125;</div><div class="line">    6.组件是否应该被更新</div><div class="line">&#125;</div><div class="line">componentWillUpdate()&#123;</div><div class="line">    7.组件将要被更新</div><div class="line">&#125;</div><div class="line">componentDidUpdate()&#123;</div><div class="line">    8.组件更新完成之后</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="虚拟dom-jsx-js-xml"><a href="#虚拟dom-jsx-js-xml" class="headerlink" title="虚拟dom jsx js+xml"></a>虚拟dom jsx js+xml</h2><ul>
-<li>虚拟dom转成js数据结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(&lt;h1 style=&#123;&#123;color:red;font-size:23px;&#125;&#125;&gt;hahahha&lt;/h1&gt;,document.querySelector(&apos;#app&apos;))</div><div class="line">render(&#123;</div><div class="line">    tagName:&apos;h1&apos;,</div><div class="line">    style:&#123;color:red,font-size:23px&#125;,</div><div class="line">    text:&apos;haha&apos;</div><div class="line">&#125;,document.querySelector(&apos;#app&apos;));</div></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/jquery/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/jquery/">jquery对象</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><ul>
-<li>分清jquery对象和原生js对象区别<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&apos;.a&apos;)---jq对象</div><div class="line">$(&apos;.a&apos;).get(0)  $()[0]---js对象</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="工具：浏览器以及特性检测"><a href="#工具：浏览器以及特性检测" class="headerlink" title="工具：浏览器以及特性检测"></a>工具：浏览器以及特性检测</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ul>
-<li><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2></li>
-<li>Callbacks<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var callbacks = $.Callbacks();</div><div class="line">callbacks.fire(data);</div><div class="line">callbacks.add(function(data)&#123;&#125;)</div><div class="line">callbacks.add(function()&#123;&#125;&#125;)</div><div class="line">...</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h2 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h2><h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>##　延迟对象</p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/html5/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/html5/">html5新加属性</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h3 id="语义化标签"><a href="#语义化标签" class="headerlink" title="语义化标签"></a>语义化标签</h3><ul>
-<li>header,nav,section,footer,aside,article</li>
-</ul>
-<h3 id="画布canvas"><a href="#画布canvas" class="headerlink" title="画布canvas"></a>画布canvas</h3><h3 id="本地存储webStorage"><a href="#本地存储webStorage" class="headerlink" title="本地存储webStorage"></a>本地存储webStorage</h3><ul>
-<li>localStorage</li>
-<li>sessionStorage<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">与cookie区别：不适合大量数据的存储，由每个对服务器的请求来传递，速度慢并且效率不高</div><div class="line">localStorage：可以存储大量数据，存储的数据没有时间限制，</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="拖放drag，drop"><a href="#拖放drag，drop" class="headerlink" title="拖放drag，drop"></a>拖放drag，drop</h3><ul>
-<li>draggable=’true’，可以使元素可拖放，</li>
-<li><p>被拖动的元素 -ondragstart，setData()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function drag()&#123;</div><div class="line">    ev.dataTransfer.setData(&apos;Text&apos;,ev.target.id)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>放在何处 - ondragover:阻止对元素的默认处理方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function allowDrop(ev)&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>进行放置 - ondrop:被拖动元素drag之后的位置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function drop(ev)&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    var ele = ev.dataTransfer.getData(&apos;Text&apos;);</div><div class="line">    ev.target.appendChild(document.getElementById(ele))</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="地理位置"><a href="#地理位置" class="headerlink" title="地理位置"></a>地理位置</h3><h3 id="socket…"><a href="#socket…" class="headerlink" title="socket…"></a>socket…</h3><h3 id="表单控件"><a href="#表单控件" class="headerlink" title="表单控件"></a>表单控件</h3><ul>
-<li>input的type类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">email 邮箱验证</div><div class="line">url 包含url地址的输入域</div><div class="line">number </div><div class="line">range  进度条</div><div class="line">search</div><div class="line">color</div><div class="line">Date pickers(date,month,week,time,datetime,datetime-local)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>音频audio，视频video</p>
-</blockquote>
-<h3 id="audio常见的属性"><a href="#audio常见的属性" class="headerlink" title="audio常见的属性"></a>audio常见的属性</h3><ul>
-<li>controls：是否使用浏览器自带的播放组件播放音乐，不写默认不用自带组件播放，写上使用浏览器自带的组件播放</li>
-<li><p>preload：页面打开的时候是否加载音频文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">auto：代表加载</div><div class="line">metadata：加载头部信息</div><div class="line">none：播放的时候加载</div></pre></td></tr></table></figure>
-</li>
-<li><p>autoplay：打开页面就开始自动播放</p>
-</li>
-<li>loop：是否循环播放</li>
-<li><p>duration：当前音频的总时间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这里只有音频加载之后才能获取音频总时间</div></pre></td></tr></table></figure>
-</li>
-<li><p>currentTime：当前音频播放的时间</p>
-</li>
-</ul>
-<h3 id="audio中常见的方法"><a href="#audio中常见的方法" class="headerlink" title="audio中常见的方法"></a>audio中常见的方法</h3><ul>
-<li>play()：播放</li>
-<li>pause()：暂停</li>
-</ul>
-<h3 id="audio中常用的事件"><a href="#audio中常用的事件" class="headerlink" title="audio中常用的事件"></a>audio中常用的事件</h3><ul>
-<li>canplay()： 音频部分资源已经加载成功了，可以播放声音了；</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Nächste Seite &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
   </nav>
 
 </nav>
@@ -580,7 +532,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -589,27 +541,27 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Neueste Artikel</h3>
+  <h3 class="title">Recent Posts</h3>
   <ul class="entry">
     
       <li>
-        <a href="/2017/02/19/demo/">动画animation</a>
+        <a href="/2017/03/02/移动端布局/">移动端布局</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/css/"></a>
+        <a href="/2017/02/27/html/">html</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/作用域/"></a>
+        <a href="/2017/02/26/ajax/">ajax</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/继承/">继承的几种方法</a>
+        <a href="/2017/02/23/newlearn/">new knowledge</a>
       </li>
     
       <li>
-        <a href="/2017/02/08/webpack/">webpack配置</a>
+        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>
