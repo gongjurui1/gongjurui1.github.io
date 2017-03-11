@@ -76,15 +76,36 @@
         <h2 id="column实现多列布局"><a href="#column实现多列布局" class="headerlink" title="column实现多列布局"></a>column实现多列布局</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-column-width/column-width  列宽</div><div class="line">-webkit-column-count/column-count:auto 列数</div><div class="line">-webkit-column-gap/colummn-gap:每列间隔</div><div class="line">-webkit-column-rule/column-rule: 列之间的边框</div></pre></td></tr></table></figure>
 <h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ul>
 <li><p>transition 过渡动画,配合transform使用。</p>
+<blockquote>
+<p>transition-property 过度的属性<br>transition-duration 对象过度的持续时间<br>transition-timing-function 动画类型<br>transition-delay 延迟过度时间</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">img&#123;</div><div class="line">    width: 100px;</div><div class="line">    transition: all .5s ease 0;</div><div class="line">    transition: width .5s ease-in-out 0, height .6s ease 0;</div><div class="line">&#125;</div><div class="line">img:hover&#123;</div><div class="line">    width: 200px;</div><div class="line">    ...</div><div class="line">    transform: translate(40px)平移  rotate(120deg)旋转  scale(1.5)缩放  skew(30deg)倾斜 </div><div class="line">&#125;</div><div class="line">轮播图css3...</div><div class="line">照片墙...</div></pre></td></tr></table></figure>
+</blockquote>
 </li>
 <li><p>animation动画 桢动画</p>
+<blockquote>
+<p>animation-name 动画名字<br>animation-duration 过度时间<br>animation-timing-function 过度类型<br>animation-delay 延迟时间<br>animation-iteration-count 循环次数<br>animation-direction 动画在循环中是否反向运动<br>animation-play-state 动画的状态</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">transform/transform-origin  animation: circle 2s ease infinite;</div><div class="line"> @keyframes circle&#123;</div><div class="line">     0%&#123;transform&#125;</div><div class="line">     50%&#123;transform&#125;</div><div class="line">     100%&#123;transform&#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</blockquote>
 </li>
 </ul>
 <blockquote>
 <p>-webkit-animation-fill-mode: both; 规定动画在播放之前或之后，其动画效果是否可见。<br>-webkit-animation-name 动画名字<br>-webkit-animation-duration: 动画执行时间<br>-webkit-animation-delay: 动画延迟多久执行<br>-webkit-animation-timing-function: 动画运行方式</p>
 </blockquote>
+<h2 id="animation和transition的区别"><a href="#animation和transition的区别" class="headerlink" title="animation和transition的区别"></a>animation和transition的区别</h2><ul>
+<li>animation是帧动画，transition是过渡动画</li>
+<li><p>触发条件，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">transition通常和hover等事件配合使用，事件触发，</div><div class="line">animation和git动态图差不多，立即播放</div></pre></td></tr></table></figure>
+</li>
+<li><p>animation可以设置循环次数</p>
+</li>
+<li><p>精确性，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">animation 可以设置每一个帧的样式和时间，每一个帧节点单独变化的样式</div><div class="line">transition 只能设置头尾，所有央视一起变化</div></pre></td></tr></table></figure>
+</li>
+<li><p>与javascript的交互，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">animation和js的交互不紧密，</div><div class="line">js设定要变化的样式，transition负责动画效果</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果灵活制动多个帧以及循环，用animation<br>如果简单的from-to效果，或者用js灵活设定动画属性，用transition</p>
 
       
     </div>
@@ -108,7 +129,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -117,8 +138,12 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/03/11/hahahhahah/"></a>
+      </li>
     
       <li>
         <a href="/2017/03/02/移动端布局/">移动端布局</a>
@@ -134,10 +159,6 @@
     
       <li>
         <a href="/2017/02/23/newlearn/">new knowledge</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>

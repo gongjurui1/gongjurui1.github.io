@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Page 3 | Hexo</title>
+  <title>Seite 3 | Hexo</title>
   <meta name="author" content="John Doe" />
 
   
@@ -56,6 +56,71 @@
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
     <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T03:49:18.462Z"><a href="/2017/02/08/gulp/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/gulp/">gulp编译</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure>
+<h2 id="gulp自带方法"><a href="#gulp自带方法" class="headerlink" title="gulp自带方法"></a>gulp自带方法</h2><ul>
+<li><p>gulp.task(任务名字,任务的定义函数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;name&apos;,function()&#123;&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp.src(文件路径)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(&apos;./app/**/*.index&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp.pipe()可读流导入到可写流里面</p>
+</li>
+<li>gulp.dest(文件编译后的目录)</li>
+<li>gulp.watch(监听文件,[‘name’])</li>
+</ul>
+<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">    gulp.watch(&apos;./app/index.html&apos;,[&apos;html&apos;]);</div><div class="line">    gulp.watch(&apos;./app/img/**/*.&#123;jpg,png,gif,jpeg&#125;&apos;,[&apos;html&apos;]);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;default&apos;,[&apos;server&apos;,&apos;watch&apos;,...])</div></pre></td></tr></table></figure>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>gulp-less:把less文件编译成css，**匹配所有的路径以及文件</li>
+<li>gulp-concat:多个css/js文件到一个文件[name].css/js</li>
+<li>gulp-clean-css: 压缩css文件</li>
+<li>gulp-rename: 重命名[name].min.css/js</li>
+<li>gulp-uglify: 压缩js文件</li>
+<li><p>gulp-inject: 自动把编译过来的css，js文件到注释地方</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!-- inject:css/js --&gt;</div><div class="line">   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/all.min.css&quot;&gt;</div><div class="line">&lt;!-- endinject --&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>gulp-connect: 自动刷新页面的功能，实时刷新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect.reload()通知浏览器自动刷新</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
   <article class="post">
   
   <div class="post-content">
@@ -310,7 +375,7 @@
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
 
 </nav>
@@ -318,7 +383,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -327,8 +392,12 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/03/11/hahahhahah/"></a>
+      </li>
     
       <li>
         <a href="/2017/03/02/移动端布局/">移动端布局</a>
@@ -344,10 +413,6 @@
     
       <li>
         <a href="/2017/02/23/newlearn/">new knowledge</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>

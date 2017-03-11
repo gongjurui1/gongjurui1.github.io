@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   
-  <title>Page 2 | Hexo</title>
+  <title>Seite 2 | Hexo</title>
   <meta name="author" content="John Doe" />
 
   
@@ -62,6 +62,55 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-02-08T04:50:26.199Z"><a href="/2017/02/08/作用域/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/作用域/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <hr>
+<h2 id="title-scope作用域"><a href="#title-scope作用域" class="headerlink" title="title:scope作用域"></a>title:scope作用域</h2><h2 id="let和var区别，块级作用域"><a href="#let和var区别，块级作用域" class="headerlink" title="let和var区别，块级作用域"></a>let和var区别，块级作用域</h2><ul>
+<li><p>这里setTimeout是异步的，0在不同浏览器是有最小时间的，当同步代码for循环完成，i=3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">for(var i=0;i&lt;3;i++)&#123;</div><div class="line">    setTimeout(function()&#123;alert(i)&#125;,0)</div><div class="line">&#125;   输出三次3</div></pre></td></tr></table></figure>
+</li>
+<li><p>如何解决异步每次输出3问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for(var i=0;i&lt;3;i++)&#123;</div><div class="line">    ~(function(i)&#123;</div><div class="line">            setTimeout(function()&#123;alert(i)&#125;,0)</div><div class="line">    &#125;)(i)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>作用域的销毁不销毁问题</p>
+</blockquote>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-02-08T03:49:42.477Z"><a href="/2017/02/08/继承/">2017-02-08</a></time>
       
       
@@ -92,60 +141,6 @@
 </li>
 </ul>
 <h3 id="es6"><a href="#es6" class="headerlink" title="es6"></a>es6</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Child.prototype = Object.create(Parent.prototype);</div><div class="line">Object.setPrototypeOf(child.prototype,Parent.prototype)</div><div class="line">==〉utils.inherits(Child,Parent)</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/react/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/react/">react笔记</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="react优势"><a href="#react优势" class="headerlink" title="react优势"></a>react优势</h2><blockquote>
-<p>严格来说，不是一个mvc模式，侧重于ui，view视图层，重复调用web组件<br>react单向数据到视图流动，不同于angular的双向数据绑定<br>操作虚拟DOM,节省了性能<br>通过虚拟dom以diff算法按照最小的步骤作用到真实DOM上</p>
-<h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
-<li>this.props.属性 </li>
-<li>this.props.children<h2 id="state状态-：只能用内部初始化，由组件内部改变"><a href="#state状态-：只能用内部初始化，由组件内部改变" class="headerlink" title="state状态 ：只能用内部初始化，由组件内部改变"></a>state状态 ：只能用内部初始化，由组件内部改变</h2></li>
-<li>this.setState({name:’gong’})调用一次，自动render一次，重新加载界面</li>
-<li>this.state.name 获取状态</li>
-<li>getInitialState获取初始状态</li>
-</ul>
-</blockquote>
-<h2 id="操作dom"><a href="#操作dom" class="headerlink" title="操作dom"></a>操作dom</h2><ul>
-<li>this.refs.[name] :refs是一个对象，[name]是key，值是对应的dom元素<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">getDefaultProps()&#123; </div><div class="line">    return &#123;name:&apos;hh&apos;&#125; 1.获取默认属性</div><div class="line">&#125;</div><div class="line">getInitialState()&#123;  </div><div class="line">   return &#123;count:1&#125; 2.获取初始状态 </div><div class="line">&#125;</div><div class="line">componentWillMount()&#123; </div><div class="line">    3.组建将要被加载在dom容器内部</div><div class="line">&#125;</div><div class="line">render()&#123;</div><div class="line">    4.组建挂载到DOM容器内部</div><div class="line">&#125;</div><div class="line">componentDidMount()&#123;</div><div class="line">    5.组件挂载完成</div><div class="line">&#125;</div><div class="line">shouldComponentUpdate(newProps,newState)&#123;&#125;</div><div class="line">    6.组件是否应该被更新</div><div class="line">&#125;</div><div class="line">componentWillUpdate()&#123;</div><div class="line">    7.组件将要被更新</div><div class="line">&#125;</div><div class="line">componentDidUpdate()&#123;</div><div class="line">    8.组件更新完成之后</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="虚拟dom-jsx-js-xml"><a href="#虚拟dom-jsx-js-xml" class="headerlink" title="虚拟dom jsx js+xml"></a>虚拟dom jsx js+xml</h2><ul>
-<li>虚拟dom转成js数据结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(&lt;h1 style=&#123;&#123;color:red;font-size:23px;&#125;&#125;&gt;hahahha&lt;/h1&gt;,document.querySelector(&apos;#app&apos;))</div><div class="line">render(&#123;</div><div class="line">    tagName:&apos;h1&apos;,</div><div class="line">    style:&#123;color:red,font-size:23px&#125;,</div><div class="line">    text:&apos;haha&apos;</div><div class="line">&#125;,document.querySelector(&apos;#app&apos;));</div></pre></td></tr></table></figure></li>
-</ul>
-
       
     </div>
     
@@ -225,6 +220,60 @@
 </li>
 <li><p>webpack.config.js</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line">var HtmlwebpackPlugin = require(&apos;html-webpack-plugin&apos;);</div><div class="line">var OpenBrowswerWebpackPulgin = require(&apos;open-browser-webpack-plugin&apos;);</div><div class="line">var ROOT_PATH = path.resolve(__dirname);</div><div class="line">var APP_PATH = path.resolve(ROOT_PATH, &apos;app&apos;);</div><div class="line">var BUILD_PATH = path.resolve(ROOT_PATH, &apos;build&apos;);</div><div class="line">var TEM_PATH = path.resolve(ROOT_PATH, &apos;templates&apos;);</div><div class="line"></div><div class="line">module.exports= &#123;</div><div class="line">  entry: &#123;</div><div class="line">    app: path.resolve(APP_PATH, &apos;index.jsx&apos;),</div><div class="line">    mobile: path.resolve(APP_PATH, &apos;mobile.jsx&apos;),</div><div class="line">    vendors: [&apos;jquery&apos;, &apos;moment&apos;]</div><div class="line">  &#125;,</div><div class="line">  output: &#123;</div><div class="line">    path: BUILD_PATH,</div><div class="line">    filename: &apos;[name].js&apos;</div><div class="line">  &#125;,</div><div class="line">  resolve: &#123;</div><div class="line">    extensions: [&apos;&apos;, &apos;.js&apos;, &apos;.jsx&apos;]</div><div class="line">  &#125;,</div><div class="line">  //启动dev source map，出错以后就会采用source-map的形式直接显示你出错代码的位置。</div><div class="line">  devtool: &apos;eval-source-map&apos;,</div><div class="line">  //enable dev server</div><div class="line">  devServer: &#123;</div><div class="line">    contentBase:BUILD_PATH,</div><div class="line">    historyApiFallback: true,</div><div class="line">    hot: true,</div><div class="line">    inline: true,</div><div class="line">    progress: true,</div><div class="line">    //只要配置dev server map这个参数就可以了</div><div class="line">    proxy:&#123;</div><div class="line">      &apos;/api/*&apos;:&#123;</div><div class="line">        target: &apos;http://localhost:8080&apos;,</div><div class="line">        secure: false</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  //babel重要的loader在这里</div><div class="line">  module: &#123;</div><div class="line">    //loader前执行处理，这样每次npm run start的时候就可以看到jshint的提示信息</div><div class="line">    preLoaders: [</div><div class="line">       &#123;</div><div class="line">         test: /\.jsx?$/,</div><div class="line">         include: APP_PATH,</div><div class="line">         loader: &quot;jshint-loader&quot;</div><div class="line">       &#125;</div><div class="line">     ],</div><div class="line">    loaders: [</div><div class="line">      &#123;</div><div class="line">        test: /\.jsx?$/,</div><div class="line">        loader: &apos;babel&apos;,</div><div class="line">        include: APP_PATH,</div><div class="line">        query: &#123;</div><div class="line">          //添加两个presents 使用这两种presets处理js或者jsx文件</div><div class="line">          presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">        &#125;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.scss$/,</div><div class="line">        loaders: [&apos;style&apos;, &apos;css&apos;, &apos;sass&apos;]</div><div class="line">      &#125;,</div><div class="line">      &#123;//该方法可以省去.babelrc文件</div><div class="line">        test: /\.js$/,</div><div class="line">        loader: &apos;babel?presets[]=es2015&amp;presets[]=react&apos;,</div><div class="line">        exclude: /node_modules/</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.css$/,</div><div class="line">        loader: &apos;style!css&apos;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test:/\.(png|jpg|gif|jpeg|gif)$/,</div><div class="line">        loader: &apos;url-loader&apos;</div><div class="line">      &#125;,</div><div class="line">      &#123;</div><div class="line">        test: /\.(svg|ttf|woff|woff2|eot)/,</div><div class="line">        loader: &apos;url&apos;</div><div class="line">      &#125;</div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  //配置jshint的选项，支持es6的校验</div><div class="line">   // any jshint option http://www.jshint.com/docs/options/</div><div class="line">   jshint: &#123;</div><div class="line">     &quot;esnext&quot;: true</div><div class="line">   &#125;,</div><div class="line">  plugins: [</div><div class="line">    new OpenBrowswerWebpackPulgin(&#123;</div><div class="line">        url:&apos;http://localhost:8080&apos;</div><div class="line">    &#125;),</div><div class="line">    new webpack.HotModuleReplacementPlugin(),</div><div class="line">    //这个使用uglifyJs压缩你的js代码</div><div class="line">    new webpack.optimize.UglifyJsPlugin(&#123;minimize: true&#125;),</div><div class="line">    new HtmlwebpackPlugin(&#123;</div><div class="line">      title: &apos;My first react app&apos;,</div><div class="line">      template: path.resolve(TEM_PATH, &apos;index.html&apos;),</div><div class="line">      filename: &apos;index.html&apos;,</div><div class="line">      chunks: [&apos;app&apos;, &apos;vendors&apos;],</div><div class="line">      inject: &apos;body&apos;</div><div class="line">    &#125;),</div><div class="line">    new HtmlwebpackPlugin(&#123;</div><div class="line">      title: &apos;Hello Mobile app&apos;,</div><div class="line">      template: path.resolve(TEM_PATH, &apos;mobile.html&apos;),</div><div class="line">      filename: &apos;mobile.html&apos;</div><div class="line">    &#125;),</div><div class="line">    //把入口文件里面的数组打包成verdors.js</div><div class="line">    new webpack.optimize.CommonsChunkPlugin(&apos;vendors&apos;, &apos;vendors.js&apos;)</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-02-08T03:49:18.493Z"><a href="/2017/02/08/react/">2017-02-08</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/02/08/react/">react笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="react优势"><a href="#react优势" class="headerlink" title="react优势"></a>react优势</h2><blockquote>
+<p>严格来说，不是一个mvc模式，侧重于ui，view视图层，重复调用web组件<br>react单向数据到视图流动，不同于angular的双向数据绑定<br>操作虚拟DOM,节省了性能<br>通过虚拟dom以diff算法按照最小的步骤作用到真实DOM上</p>
+<h2 id="react-reactDOM-babel编译es6-es5"><a href="#react-reactDOM-babel编译es6-es5" class="headerlink" title="react,reactDOM,babel编译es6-es5"></a>react,reactDOM,babel编译es6-es5</h2><h2 id="this-props获取属性"><a href="#this-props获取属性" class="headerlink" title="this.props获取属性"></a>this.props获取属性</h2><ul>
+<li>this.props.属性 </li>
+<li>this.props.children<h2 id="state状态-：只能用内部初始化，由组件内部改变"><a href="#state状态-：只能用内部初始化，由组件内部改变" class="headerlink" title="state状态 ：只能用内部初始化，由组件内部改变"></a>state状态 ：只能用内部初始化，由组件内部改变</h2></li>
+<li>this.setState({name:’gong’})调用一次，自动render一次，重新加载界面</li>
+<li>this.state.name 获取状态</li>
+<li>getInitialState获取初始状态</li>
+</ul>
+</blockquote>
+<h2 id="操作dom"><a href="#操作dom" class="headerlink" title="操作dom"></a>操作dom</h2><ul>
+<li>this.refs.[name] :refs是一个对象，[name]是key，值是对应的dom元素<h2 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">getDefaultProps()&#123; </div><div class="line">    return &#123;name:&apos;hh&apos;&#125; 1.获取默认属性</div><div class="line">&#125;</div><div class="line">getInitialState()&#123;  </div><div class="line">   return &#123;count:1&#125; 2.获取初始状态 </div><div class="line">&#125;</div><div class="line">componentWillMount()&#123; </div><div class="line">    3.组建将要被加载在dom容器内部</div><div class="line">&#125;</div><div class="line">render()&#123;</div><div class="line">    4.组建挂载到DOM容器内部</div><div class="line">&#125;</div><div class="line">componentDidMount()&#123;</div><div class="line">    5.组件挂载完成</div><div class="line">&#125;</div><div class="line">shouldComponentUpdate(newProps,newState)&#123;&#125;</div><div class="line">    6.组件是否应该被更新</div><div class="line">&#125;</div><div class="line">componentWillUpdate()&#123;</div><div class="line">    7.组件将要被更新</div><div class="line">&#125;</div><div class="line">componentDidUpdate()&#123;</div><div class="line">    8.组件更新完成之后</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="虚拟dom-jsx-js-xml"><a href="#虚拟dom-jsx-js-xml" class="headerlink" title="虚拟dom jsx js+xml"></a>虚拟dom jsx js+xml</h2><ul>
+<li>虚拟dom转成js数据结构<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ReactDOM.render(&lt;h1 style=&#123;&#123;color:red;font-size:23px;&#125;&#125;&gt;hahahha&lt;/h1&gt;,document.querySelector(&apos;#app&apos;))</div><div class="line">render(&#123;</div><div class="line">    tagName:&apos;h1&apos;,</div><div class="line">    style:&#123;color:red,font-size:23px&#125;,</div><div class="line">    text:&apos;haha&apos;</div><div class="line">&#125;,document.querySelector(&apos;#app&apos;));</div></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -391,25 +440,26 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/less/">2017-02-08</a></time>
+        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/jquery/">2017-02-08</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/02/08/less/">less</a></h1>
+    <h1 class="title"><a href="/2017/02/08/jquery/">jquery对象</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h2><ul>
-<li>reference编译的时候不用编译代码，调用使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@import &apos;base.less&apos;;</div><div class="line">@import (reference) &apos;base.less&apos;;</div></pre></td></tr></table></figure>
+        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><ul>
+<li>分清jquery对象和原生js对象区别<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&apos;.a&apos;)---jq对象</div><div class="line">$(&apos;.a&apos;).get(0)  $()[0]---js对象</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="文件依赖"><a href="#文件依赖" class="headerlink" title="文件依赖"></a>文件依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.music&#123;</div><div class="line">    .music-btn&#123;</div><div class="line">        &amp;.play&#123;</div><div class="line">            .play.music-btn并列</div><div class="line">            &amp;:after&#123;</div><div class="line">                .play.music-btn:after伪类伪元素</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
-<li>参数雪碧图或者动画设置名字效果等不同<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@color-white: #ddd;</div><div class="line">css雪碧图引用（图片大小）</div><div class="line">.spriteFn(@x:0,@y:0)&#123;</div><div class="line">    background: url(&apos;&apos; no-repeat @x @y)</div><div class="line">&#125;</div><div class="line">.transitionFn(@property:all,@duration:1s,@time-function:linear,@delay:0s)&#123;</div><div class="line">    -webkit-transition: @arguments;代表所有参数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="工具：浏览器以及特性检测"><a href="#工具：浏览器以及特性检测" class="headerlink" title="工具：浏览器以及特性检测"></a>工具：浏览器以及特性检测</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ul>
+<li><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2></li>
+<li>Callbacks<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var callbacks = $.Callbacks();</div><div class="line">callbacks.fire(data);</div><div class="line">callbacks.add(function(data)&#123;&#125;)</div><div class="line">callbacks.add(function()&#123;&#125;&#125;)</div><div class="line">...</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h2 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h2><h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>##　延迟对象</p>
 
       
     </div>
@@ -437,26 +487,25 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/jquery/">2017-02-08</a></time>
+        <time datetime="2017-02-08T03:49:18.477Z"><a href="/2017/02/08/less/">2017-02-08</a></time>
       
       
   
-    <h1 class="title"><a href="/2017/02/08/jquery/">jquery对象</a></h1>
+    <h1 class="title"><a href="/2017/02/08/less/">less</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h2 id="核心"><a href="#核心" class="headerlink" title="核心"></a>核心</h2><ul>
-<li>分清jquery对象和原生js对象区别<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$(&apos;.a&apos;)---jq对象</div><div class="line">$(&apos;.a&apos;).get(0)  $()[0]---js对象</div></pre></td></tr></table></figure>
+        <h2 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h2><ul>
+<li>reference编译的时候不用编译代码，调用使用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@import &apos;base.less&apos;;</div><div class="line">@import (reference) &apos;base.less&apos;;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="工具：浏览器以及特性检测"><a href="#工具：浏览器以及特性检测" class="headerlink" title="工具：浏览器以及特性检测"></a>工具：浏览器以及特性检测</h2><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h2 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h2><h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ul>
-<li><h2 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h2></li>
-<li>Callbacks<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var callbacks = $.Callbacks();</div><div class="line">callbacks.fire(data);</div><div class="line">callbacks.add(function(data)&#123;&#125;)</div><div class="line">callbacks.add(function()&#123;&#125;&#125;)</div><div class="line">...</div></pre></td></tr></table></figure>
+<h2 id="文件依赖"><a href="#文件依赖" class="headerlink" title="文件依赖"></a>文件依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.music&#123;</div><div class="line">    .music-btn&#123;</div><div class="line">        &amp;.play&#123;</div><div class="line">            .play.music-btn并列</div><div class="line">            &amp;:after&#123;</div><div class="line">                .play.music-btn:after伪类伪元素</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>参数雪碧图或者动画设置名字效果等不同<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@color-white: #ddd;</div><div class="line">css雪碧图引用（图片大小）</div><div class="line">.spriteFn(@x:0,@y:0)&#123;</div><div class="line">    background: url(&apos;&apos; no-repeat @x @y)</div><div class="line">&#125;</div><div class="line">.transitionFn(@property:all,@duration:1s,@time-function:linear,@delay:0s)&#123;</div><div class="line">    -webkit-transition: @arguments;代表所有参数</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><h2 id="文档处理"><a href="#文档处理" class="headerlink" title="文档处理"></a>文档处理</h2><h2 id="筛选"><a href="#筛选" class="headerlink" title="筛选"></a>筛选</h2><h2 id="css"><a href="#css" class="headerlink" title="css"></a>css</h2><h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><p>##　延迟对象</p>
 
       
     </div>
@@ -563,76 +612,11 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-02-08T03:49:18.462Z"><a href="/2017/02/08/gulp/">2017-02-08</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/02/08/gulp/">gulp编译</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp</div></pre></td></tr></table></figure>
-<h2 id="gulp自带方法"><a href="#gulp自带方法" class="headerlink" title="gulp自带方法"></a>gulp自带方法</h2><ul>
-<li><p>gulp.task(任务名字,任务的定义函数)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;name&apos;,function()&#123;&#125;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>gulp.src(文件路径)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.src(&apos;./app/**/*.index&apos;)</div></pre></td></tr></table></figure>
-</li>
-<li><p>gulp.pipe()可读流导入到可写流里面</p>
-</li>
-<li>gulp.dest(文件编译后的目录)</li>
-<li>gulp.watch(监听文件,[‘name’])</li>
-</ul>
-<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;watch&apos;,function()&#123;</div><div class="line">    gulp.watch(&apos;./app/index.html&apos;,[&apos;html&apos;]);</div><div class="line">    gulp.watch(&apos;./app/img/**/*.&#123;jpg,png,gif,jpeg&#125;&apos;,[&apos;html&apos;]);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp.task(&apos;default&apos;,[&apos;server&apos;,&apos;watch&apos;,...])</div></pre></td></tr></table></figure>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>gulp-less:把less文件编译成css，**匹配所有的路径以及文件</li>
-<li>gulp-concat:多个css/js文件到一个文件[name].css/js</li>
-<li>gulp-clean-css: 压缩css文件</li>
-<li>gulp-rename: 重命名[name].min.css/js</li>
-<li>gulp-uglify: 压缩js文件</li>
-<li><p>gulp-inject: 自动把编译过来的css，js文件到注释地方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!-- inject:css/js --&gt;</div><div class="line">   &lt;link rel=&quot;stylesheet&quot; href=&quot;css/all.min.css&quot;&gt;</div><div class="line">&lt;!-- endinject --&gt;</div></pre></td></tr></table></figure>
-</li>
-<li><p>gulp-connect: 自动刷新页面的功能，实时刷新</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">connect.reload()通知浏览器自动刷新</div></pre></td></tr></table></figure>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
 
 <nav id="pagination">
   
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; Vorherige Seite</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Nächste Seite &raquo;</a>
   </nav>
 
 </nav>
@@ -640,7 +624,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
@@ -649,8 +633,12 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/03/11/hahahhahah/"></a>
+      </li>
     
       <li>
         <a href="/2017/03/02/移动端布局/">移动端布局</a>
@@ -666,10 +654,6 @@
     
       <li>
         <a href="/2017/02/23/newlearn/">new knowledge</a>
-      </li>
-    
-      <li>
-        <a href="/2017/02/22/浏览器默认的滚动条/"></a>
       </li>
     
   </ul>
